@@ -26,11 +26,17 @@ public class LinkedList<T> {
 		}
 	}
 
-	void print() {
+	void display() {
 		Node<T> temp = head;
 		while (temp != null) {
-			System.out.print(temp.data + "-> ");
+			System.out.print(temp.data + " ");
 			temp = temp.next;
 		}
+	}
+
+	public void insert(T data) {
+		Node<T> node = new Node<>(data);
+		head.next = node;
+		node.next = tail;
 	}
 }
